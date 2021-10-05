@@ -1,7 +1,7 @@
 SHELL = /bin/bash
 CARGO_TARGET_DIR ?= ../../pref-polys/target
 HS_GEN_TARGET_DIR = ../../hs_gen/build
-SOLVE_HS_TARGET_DIR = ../../solve_hs
+SOLVE_HS_TARGET_DIR = ../../solve_hs/build
 GRAPH != grep graph config.yml | cut -d' ' -f2
 SEED != grep seed config.yml | cut -d' ' -f2
 
