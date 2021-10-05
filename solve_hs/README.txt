@@ -4,11 +4,11 @@ To build:
 print-ilp expects the output of inst_gen as input and prints the result
 
 example:
-	./print-ilp < ../inst_gen/build/Sets.out
+	./build/print-ilp < ../inst_gen/build/Sets.out
 
 To save the result to a file run
 
-	./print-ilp < ../inst_gen/build/Sets.out > ilp.txt
+	./build/print-ilp < ../inst_gen/build/Sets.out > ilp.txt
 
 To solve the ilp run
 	
@@ -21,4 +21,8 @@ example:
 
 	glpsol --lp ilp.txt --output ilp-lponly.sol --nomip
 	
-	./greedy-solver Sets.out ilp-lponly.sol
+	./build/greedy-solver Sets.out ilp-lponly.sol
+
+The naive greedy solver takes only a sets file as input
+
+    ./build/naive-greedy-solver Sets.out
