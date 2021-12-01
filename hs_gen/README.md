@@ -23,8 +23,8 @@ For a sanity check there is simple data set "test_inst.txt" which can also be se
 
 The Set generator `arrang` outputs a file Sets.out which contains one line per vertex p of the arrangement:
 
-<polygonID containing p> <polygonID containing p> ....
+    <polygonID containing p> <polygonID containing p>
 
 It also outputs a file Sets.pts which contains one line per vertex p with coordinates of p:
 
-<p.x()> <p.y()>
+    <p.x()> <p.y()>
