@@ -34,6 +34,7 @@ use std::convert::TryInto;
 
 #[derive(StructOpt, Serialize, Deserialize)]
 struct Opts {
+    /// Path to the Graphfile
     graph: Option<PathBuf>,
     #[structopt(short = "p", long)]
     num_paths: Option<usize>,
@@ -54,6 +55,7 @@ struct Opts {
     paths_file: Option<PathBuf>,
     #[structopt(long)]
     config_file: Option<PathBuf>,
+    /// Exit after writing config file
     #[structopt(long)]
     config_only: bool,
 }
