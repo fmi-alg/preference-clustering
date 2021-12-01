@@ -37,7 +37,9 @@ struct Opts {
     /// Path to the Graphfile
     graph: Option<PathBuf>,
     #[structopt(short = "p", long)]
+    /// Amount of trajectories to generate
     num_paths: Option<usize>,
+    /// Amount of preferences to use when generating trajectories
     #[structopt(short = "n", long)]
     num_prefs: Option<usize>,
     #[structopt(short = "s", long)]
@@ -48,8 +50,8 @@ struct Opts {
     /// Changes the number of directions to approximate in (only applicable with random and rotation)
     #[structopt(short = "c", long)]
     approx_count: Option<usize>,
-    // Path to write result to
     #[structopt(short = "o", long, default_value = ".")]
+    /// Path to write result to
     output_path: PathBuf,
     #[structopt(short = "f", long)]
     paths_file: Option<PathBuf>,

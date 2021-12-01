@@ -20,19 +20,31 @@ static PRECISION: f64 = 0.00000001;
 
 #[derive(StructOpt)]
 struct Opts {
+    /// Path to the graph file
     graph: PathBuf,
     #[structopt(short = "s", long)]
+    /// seed for randomly generated trajectories
     seed: Option<u64>,
+    /// Path to output file
     #[structopt(short = "o", long)]
     output: Option<String>,
     #[structopt(short = "d", long)]
     debug_output: Option<String>,
-    #[structopt(short = "m", long)]
+    /// Used mode:
+    ///   - 0: generate 'p' trajectories with 'n' different preferences,
+    ///        output preference spaces (default)
+    ///   - 1: generate 1 trajectory, output area representation
+    ///   - 2: generate 'p' trajectories, output most complex area representation
+    ///   - 3: read paths file, output preference spaces
+    #[structopt(short = "m", long, verbatim_doc_comment)]
     modus: Option<u32>,
+    /// Amount of preferences to use when generating trajectories
     #[structopt(short = "n", long)]
     num_prefs: Option<u32>,
+    /// Amount of trajectories to generate
     #[structopt(short = "p", long)]
     num_paths: Option<u32>,
+    /// Path to paths files
     #[structopt(short = "f", long)]
     path_file: Option<PathBuf>,
 }

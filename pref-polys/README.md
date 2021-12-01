@@ -16,6 +16,8 @@ cargo build --release
 
 # Usage Examples
 
+## Approximate Preference Spaces
+
 For creating approximate polyhedra the `random_approx_instances` executable is used.
 
 ```sh
@@ -49,6 +51,44 @@ As an input it needs a graph file, an approximation strategy and the
 trajectories to work on. The trajectories can be specified via a paths file in
 yml format or via the parameters to generate them randomly. Randomly generated
 trajectories are written to `paths.yml` in the output directory.
+
+## Exact Preference Spaces
+
+For creating approximate polyhedra the `exact_preference_areas` executable is used.
+
+```sh
+./target/release/exact_preference_areas --help
+pref-polys 0.1.0
+USAGE:
+    exact_preference_areas [OPTIONS] <graph>
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+    -d, --debug-output <debug-output>
+    -m, --modus <modus>                  Used mode:
+                                           - 0: generate 'p' trajectories with 'n' different preferences,
+                                                output preference spaces (default)
+                                           - 1: generate 1 trajectory, output area representation
+                                           - 2: generate 'p' trajectories, output most complex area representation
+                                           - 3: read paths file, output preference spaces
+    -p, --num-paths <num-paths>          Amount of trajectories to generate
+    -n, --num-prefs <num-prefs>          Amount of preferences to use when generating trajectories
+    -o, --output <output>                Path to output file
+    -f, --path-file <path-file>          Path to paths files
+    -s, --seed <seed>                    seed for randomly generated trajectories
+
+ARGS:
+    <graph>    Path to the graph file
+```
+
+Its most important option, apart from the graph file, is the modus. This value
+determines what the application does and which other cli options are used. The
+most important values are 0 and 3. Both write the exact preference areas into a
+.space file. The first uses the `num-prefs` and `num-paths` value to generate paths,
+while the second uses trajectories read from the `path-file`.
 
 # Used File Formats
 
