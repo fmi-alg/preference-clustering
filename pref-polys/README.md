@@ -89,3 +89,20 @@ In the first line the amount of trajectories/preference spaces is listed. In
 each subsequent line, you will find first the number of vertices of the space
 and then 6\* #vertices integers which are the coefficients a,b,c of the constraints in
 the form ax + by + c = 0.
+
+## Paths file
+
+The paths file is a simple yaml file that lists all node ids, edge ids and the costs
+of the trajectories used. A sample trajectory from node 0 to node 2 via edge 0 looks like this:
+
+```yaml
+- nodes:
+    - 0
+    - 2
+  edges:
+    - 0
+  total_dimension_costs:
+    - 3000.0
+    - 8000.0
+    - 50000.0
+```
