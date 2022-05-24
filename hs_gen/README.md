@@ -19,9 +19,9 @@ For a sanity check there is simple data set "test_inst.txt" which can also be se
 
     ./arrang ../test_inst.txt
 
-For a visual representation the "-w" flag can be added after the input file. This will show a window with the polyhedra and their intersections.
+For a visual representation the "-w" flag can be added **after** the input file. This will show a window with the polyhedra and their intersections.
 
-    ./arring ../input.txt -w
+    ./arrang ../input.txt -w
 
 # Output Files
 
